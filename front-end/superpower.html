@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superhero Sightings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">HERO</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Superheros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Superpowers<span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Organizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sightings</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--table to display, edit, and delete superpowers-->
+    <div class="container">
+      <h1 class="title display-3">Superpowers</h1>
+      <table class="table table-hover m-4">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="contentRows">
+          <tr>
+            <th scope="row"></th>
+            <th></th>
+            <th><button type="button" class="btn btn-primary">Edit</button></th>
+            <th>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--Form to add a superpower-->
+    <div id="add-form-div" class="container">
+      <h1>Add New Superpower</h1>
+      <form role="form" id="add-form">
+        <div class="mb-3 col-xs-2">
+          <label for="addName" class="control-label">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="add-power"
+            placeholder="Enter Name of Power"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Superpower</button>
+      </form>
+    </div>
+
+    <!--Form to edit a superpower-->
+    <div id="edit-form-div" class="container" style="display: none">
+      <h2>Edit Superpower Name</h2>
+      <form role="form" id="edit-form">
+        <div class="form-group-row">
+          <label for="disabledTextInput" class="col-md-4 control-label"
+            >Name:</label
+          >
+          <div class="col-md-8">
+            <input
+              type="text"
+              class="form-control"
+              id="edit-power"
+              placeholder="Enter new superpower"
+              required
+            />
+          </div>
+        </div>
+
+        <!--Button to update and cancel edit-->
+        <div class="form-group row">
+          <div class="offset-md-4 col-md-8">
+            <button type="button" id="update-btn" class btn btn-primary>
+              Edit Superpower
+            </button>
+          </div>
+        </div>
+
+        <div class="offset-md-4 col-md-8">
+          <input type="hidden" id="edit-power-name" />
+          <button
+            type="button"
+            id="edit-cancel-btn"
+            class="btn btn-danger"
+            onclick="hideEditForm()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- JQuery script tags-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/superpower.js"></script>
+  </body>
+</html>
