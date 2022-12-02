@@ -20,7 +20,7 @@ function loadSuperhero() {
             superheroRows.append(row);
             row = '<tr><td>description</td><td>' + data.description + '</td>';
             superheroRows.append(row);
-            superheroRows.append('<tr><td>superpower</td><td>' + data.superpower.id + '</td>');
+            superheroRows.append('<tr><td>superpower</td><td>' + data.superpower.name + '</td>');
             
         },
         error: function() {
